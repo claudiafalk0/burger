@@ -1,0 +1,26 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "This project is meant to show the use of mySql, heroku, handlebars, and js. For this project, a user should be able to input and delete a burger from the list, then when the page refreshes the object they have added/deleted should still exist on the table. This project is being hosted on heroku.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiafalk0/burger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiafalk0/burger/issues"
+  },
+  "homepage": "https://github.com/claudiafalk0/burger#readme"
+}

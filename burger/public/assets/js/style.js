@@ -1,5 +1,5 @@
 $(function() {
-    $(".change-sleep").on("click", function(event) {
+    $(".change-burger").on("click", function(event) {
       var id = $(this).data("id");
       var eatenBurger = $(this).data("hasEaten");
   

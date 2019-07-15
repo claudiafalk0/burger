@@ -3,9 +3,17 @@
 <h2>Burgers to be Eaten!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#unless hasEaten}}
-      {{> burgers/burger_block hasEaten=false}}
+      <li>
+	{{name}}
+
+	<button class="change-burger" data-id="{{id}}" data-newhasEaten="{{hasEaten}}">
+		{{#unless hasEaten}}Devour the Burger!{{/unless}}
+	</button>
+
+	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+</li>
     {{/unless}}
   {{/each}}
 </ul>
@@ -13,9 +21,11 @@
 <h2>Burgers you've eaten!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#if hasEaten}}
-      {{> burgers/burger_block hasEaten=true}}
+    <li>
+     {{name}}
+    </li>
     {{/if}}
   {{/each}}
 </ul>

@@ -31,9 +31,11 @@ router.get("/", function(req, res) {
       
         console.log("condition", condition);
       
+        console.log("req.body.hasEaten " + req.body.hasEaten)
         burger.update({
           hasEaten: req.body.hasEaten
         }, condition, function(result) {
+          console.log("burgers_controller " + result.changedRows);
           if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();

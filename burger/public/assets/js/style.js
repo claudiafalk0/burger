@@ -1,11 +1,13 @@
 $(function() {
     $(".change-burger").on("click", function(event) {
       var id = $(this).data("id");
-      var eatenBurger = $(this).data("hasEaten");
+      var eatenBurger = $(this).data("newhaseaten");
   
       var eatenBurgerState = {
-        hasEaten: eatenBurger
+        hasEaten: !eatenBurger
       };
+
+      console.log($(this).data("newhaseaten"));
   
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
@@ -13,9 +15,10 @@ $(function() {
         data: eatenBurgerState
       }).then(
         function() {
-          console.log("changed burger eaten to", neweatenBurger);
+          console.log("changed burger eaten to", eatenBurger);
           // Reload the page to get the updated list
           location.reload();
+          console.log('reload completes')
         }
       );
     });
@@ -25,7 +28,8 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        name: $("#ca").val().trim()
+        name: $("#ca").val().trim() 
+        // hasEaten: $("[name=hasEaten]:checked").val().trim()
       };
   
       // Send the POST request.
